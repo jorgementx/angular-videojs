@@ -1,26 +1,76 @@
 @import "video.js/dist/video-js.min.css";
-// @import '@videojs/themes/dist/city/index.css';
+// @import '@videojs/themes/fantasy/index.css';
+
+.vjs-poster {
+  background-size: cover;
+  // background-position: inherit;
+}
+
+.vjs-theme-soria .vjs-big-play-button {
+  width: 70px;
+  height: 70px;
+  background: none;
+  line-height: 70px;
+  font-size: 80px;
+  border: none;
+  top: 50%;
+  left: 50%;
+  margin-top: -35px;
+  margin-left: -35px;
+  color: var(--vjs-theme-soria--primary);
+}
+
+.vjs-theme-soria:hover .vjs-big-play-button,
+.vjs-theme-soria.vjs-big-play-button:focus {
+  background-color: transparent;
+  color: #fff;
+}
+
 .rounded-xl {
   border-radius: 0.75rem;
 }
 
-.vjs-theme-city {
-  --vjs-theme-city--primary: #e8c22a;
-  --vjs-theme-city--secondary: #fff;
+.vjs-theme-soria {
+  --vjs-theme-soria--primary: #e8c22a;
+  --vjs-theme-soria--secondary: #fff;
+  --font-color: rgb(27, 36, 52);
+  --control-bar-bg: rgba(255, 255, 255, 0.392);
 }
-.vjs-theme-city .vjs-control-bar {
+
+// control bar
+.vjs-theme-soria .vjs-control-bar {
   height: 70px;
   padding-top: 20px;
-  background: none;
-  background-image: linear-gradient(0deg, #000, transparent);
+  width: 96%;
+  margin: 0 auto 6px auto;
+  background-color: var(--control-bar-bg);
+  backdrop-filter: blur(5px);
+  border-radius: 6px;
 }
-.vjs-theme-city .vjs-button > .vjs-icon-placeholder:before {
+.vjs-theme-soria .vjs-button > .vjs-icon-placeholder:before {
+  color: var(--font-color);
   line-height: 50px;
 }
-.vjs-theme-city .vjs-play-progress:before {
-  display: none;
+
+// progress dot
+.vjs-theme-soria .vjs-play-progress:before {
+  display: block;
+  font-size: 9px;
+  // color: var(--vjs-theme-soria--primary);
+  color: white;
+  
+  // soft box shadow for elevation effect
+  box-shadow: 0 0 5px 2px rgba(27, 36, 52, 0.2); 
+  
+  // outline-color: white;
+  // outline-style: solid;
+  // outline-width: 5px;
+  // outline-offset: 0px;
+  // box-shadow: 0 0 0 5px white;
+
+  border-radius: 99px;
 }
-.vjs-theme-city .vjs-progress-control {
+.vjs-theme-soria .vjs-progress-control {
   position: absolute;
   top: 0;
   right: 0;
@@ -28,83 +78,116 @@
   width: 100%;
   height: 20px;
 }
-.vjs-theme-city .vjs-progress-control .vjs-progress-holder {
+.vjs-theme-soria .vjs-progress-control .vjs-progress-holder {
   position: absolute;
   top: 20px;
   right: 0;
   left: 0;
   width: 100%;
   margin: 0;
+  // background-color: rgb(128, 128, 149);
 }
-.vjs-theme-city .vjs-play-progress {
-  background-color: var(--vjs-theme-city--primary);
+.vjs-theme-soria .vjs-play-progress {
+  background-color: var(--vjs-theme-soria--primary);
+  font-size: 25px;
 }
-.vjs-theme-city .vjs-remaining-time {
+
+// timer (change font family)
+.vjs-theme-soria .vjs-remaining-time {
+  // font-family: "Roboto", sans-serif;
   order: 1;
   line-height: 50px;
+  font-size: 12px;
+  // font-weight: bold;
   flex: 3;
   text-align: left;
+  color: var(--font-color);
 }
-.vjs-theme-city .vjs-play-control {
+.vjs-theme-soria .vjs-play-control {
   order: 2;
   flex: 8;
   font-size: 1.75em;
 }
-.vjs-theme-city .vjs-fullscreen-control,
-.vjs-theme-city .vjs-picture-in-picture-control,
-.vjs-theme-city .vjs-volume-panel {
+.vjs-theme-soria .vjs-fullscreen-control,
+.vjs-theme-soria .vjs-picture-in-picture-control,
+.vjs-theme-soria .vjs-volume-panel {
   order: 3;
   flex: 1;
 }
-.vjs-theme-city
+
+// volume bar button
+.vjs-theme-soria .vjs-volume-bar {
+  font-size: 10px;
+}
+
+// play button
+.video-js .vjs-play-control .vjs-icon-placeholder:before {
+  font-size: 35px;
+}
+
+// fullscreen button
+.video-js .vjs-fullscreen-control .vjs-icon-placeholder:before {
+  font-size: 25px;
+  // font-weight: bold;
+}
+
+// picture in picture button
+.video-js .vjs-picture-in-picture-control .vjs-icon-placeholder:before {
+  // font-weight: bold;
+  font-size: 20px;
+}
+
+
+.vjs-theme-soria
   .vjs-volume-panel:hover
   .vjs-volume-control.vjs-volume-horizontal {
   height: 100%;
 }
-.vjs-theme-city .vjs-mute-control {
+.vjs-theme-soria .vjs-mute-control {
   display: none;
 }
-.vjs-theme-city .vjs-volume-panel {
+.vjs-theme-soria .vjs-volume-panel {
   margin-left: 0.5em;
   margin-right: 0.5em;
   padding-top: 1.5em;
 }
-.vjs-theme-city .vjs-volume-bar.vjs-slider-horizontal,
-.vjs-theme-city .vjs-volume-panel,
-.vjs-theme-city .vjs-volume-panel.vjs-volume-panel-horizontal:hover,
-.vjs-theme-city
+.vjs-theme-soria .vjs-volume-bar.vjs-slider-horizontal,
+.vjs-theme-soria .vjs-volume-panel,
+.vjs-theme-soria .vjs-volume-panel.vjs-volume-panel-horizontal:hover,
+.vjs-theme-soria
   .vjs-volume-panel:active
   .vjs-volume-control.vjs-volume-horizontal,
-.vjs-theme-city
+.vjs-theme-soria
   .vjs-volume-panel:focus
   .vjs-volume-control.vjs-volume-horizontal,
-.vjs-theme-city .vjs-volume-panel:hover,
-.vjs-theme-city
+.vjs-theme-soria .vjs-volume-panel:hover,
+.vjs-theme-soria
   .vjs-volume-panel:hover
   .vjs-volume-control.vjs-volume-horizontal {
   width: 3em;
 }
-.vjs-theme-city .vjs-volume-level:before {
+.vjs-theme-soria .vjs-volume-level:before {
   font-size: 1em;
 }
-.vjs-theme-city .vjs-volume-panel .vjs-volume-control {
-  opacity: 1;
+.vjs-theme-soria .vjs-volume-panel .vjs-volume-control {
+  opasoria: 1;
   width: 100%;
   height: 100%;
 }
-.vjs-theme-city .vjs-volume-bar {
+
+.vjs-theme-soria .vjs-volume-bar {
   background-color: transparent;
   margin: 0;
 }
-.vjs-theme-city .vjs-slider-horizontal .vjs-volume-level {
+.vjs-theme-soria .vjs-slider-horizontal .vjs-volume-level {
   height: 100%;
 }
-.vjs-theme-city .vjs-volume-bar.vjs-slider-horizontal {
+.vjs-theme-soria .vjs-volume-bar.vjs-slider-horizontal {
   margin-top: 0;
   margin-bottom: 0;
   height: 100%;
 }
-.vjs-theme-city .vjs-volume-bar:before {
+.vjs-theme-soria .vjs-volume-bar:before {
   content: "";
   z-index: 0;
   width: 0;
@@ -116,11 +199,11 @@
   border-style: solid;
   border-width: 0 0 1.75em 3em;
 }
-.vjs-theme-city .vjs-volume-level {
+.vjs-theme-soria .vjs-volume-level {
   overflow: hidden;
   background-color: transparent;
 }
-.vjs-theme-city .vjs-volume-level:before {
+.vjs-theme-soria .vjs-volume-level:before {
   content: "";
   z-index: 1;
   width: 0;
@@ -129,7 +212,7 @@
   top: 0;
   left: 0;
   border-left: 3em solid transparent;
-  border-bottom: 1.75em solid var(--vjs-theme-city--secondary);
+  border-bottom: 1.75em solid var(--font-color);
   border-right: 0 solid transparent;
   border-top: 0 solid transparent;
 }

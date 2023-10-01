@@ -14,10 +14,11 @@ import videojs from 'video.js';
   template: `
     <video
       #target
-      class="video-js vjs-theme-city"
+      class="video-js vjs-theme-soria"
       controls
       playsinline
-      preload="none"
+      poster='https://w0.peakpx.com/wallpaper/562/352/HD-wallpaper-kotonoha-no-niwa-movie-lake-kotonoha-city-anime-garden-of-words-garden-rain-scenery-couple.jpg'
+      preload='metadata'
     ></video>
   `,
   styleUrls: ['./video-player.scss'],
@@ -30,6 +31,8 @@ export class VjsPlayerComponent implements OnInit, OnDestroy {
   @Input() options?: {
     fluid?: boolean;
     aspectRatio?: string;
+    preload?: videojs.Preload;
+    poster?: string;
     muted?: boolean;
      skipButtons?: {forward?: number; backward?: number},
     experimentalSvgIcons?: boolean;
